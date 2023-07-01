@@ -1,0 +1,137 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "OpenAPI definition",
+		"version": "v0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8080",
+			"description": "Generated server url"
+		}
+	],
+	"paths": {
+		"/bookTicket": {
+			"post": {
+				"tags": [
+					"book-ticket-rest-controller"
+				],
+				"operationId": "bookTicket",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PassangerInfo"
+							}
+						},
+						"application/xml": {
+							"schema": {
+								"$ref": "#/components/schemas/PassangerInfo"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/TicketDetails"
+								}
+							},
+							"application/xml": {
+								"schema": {
+									"$ref": "#/components/schemas/TicketDetails"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"PassangerInfo": {
+				"type": "object",
+				"properties": {
+					"firstName": {
+						"type": "string"
+					},
+					"lastName": {
+						"type": "string"
+					},
+					"age": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"contactNumber": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"to": {
+						"type": "string"
+					},
+					"from": {
+						"type": "string"
+					},
+					"journeyDate": {
+						"type": "string"
+					},
+					"ticketCount": {
+						"type": "integer",
+						"format": "int32"
+					}
+				}
+			},
+			"TicketDetails": {
+				"type": "object",
+				"properties": {
+					"ticketStatus": {
+						"type": "string"
+					},
+					"ticketPrice": {
+						"type": "number",
+						"format": "double"
+					},
+					"ticketPNR": {
+						"type": "string"
+					},
+					"ticketBookingDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"firstName": {
+						"type": "string"
+					},
+					"lastName": {
+						"type": "string"
+					},
+					"age": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"contactNumber": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"to": {
+						"type": "string"
+					},
+					"from": {
+						"type": "string"
+					},
+					"journeyDate": {
+						"type": "string"
+					},
+					"ticketCount": {
+						"type": "integer",
+						"format": "int32"
+					}
+				}
+			}
+		}
+	}
+}
